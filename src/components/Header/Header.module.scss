@@ -2,9 +2,9 @@
   grid-area: header;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  max-width: 1300px;
 }
 .search_wrapper {
-  width: 640px;
+  width: 540px;
 }

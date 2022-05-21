@@ -1,5 +1,6 @@
 import { AdditionalInfo } from './AdditionalInfo';
 import style from './CurrentDay.module.scss';
+
 import { MainInfo } from './MainInfo';
 import { SunInfo } from './SunInfo';
 import { WindInfo } from './WindInfo';
