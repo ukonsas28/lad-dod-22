@@ -1,27 +1,34 @@
-import style from "./CurrentDay.module.scss";
+import { AdditionalInfo } from './AdditionalInfo';
+import style from './CurrentDay.module.scss';
+import { MainInfo } from './MainInfo';
+import { SunInfo } from './SunInfo';
+import { WindInfo } from './WindInfo';
 
-export const CurrentDay = ({
-  weatherData,
-  locationData,
-  astronomyData,
-}) => {
+export const CurrentDay = ({ weatherData, locationData, astronomyData }) => {
   return (
     <section className={style.content}>
-      <div>{`${locationData?.country_name} ${locationData?.city} - location`}</div>
-      <div>{`${weatherData?.temp_c} - Temperature in celsius`}</div>
-      <div>{`${weatherData?.feelslike_c} - Feels like temperature in celsius`}</div>
-      <div>{`${weatherData?.condition.text}`}</div>
-      <img src={weatherData?.condition.icon} alt="icon" />
-      <div>{`${weatherData?.wind_kph} - Wind speed in kilometer per hour`}</div>
-      <div>{`${weatherData?.gust_kph} - Wind gust in kilometer per hour`}</div>
-      <div>{`${weatherData?.wind_dir} - Wind direction as 16 point compass. e.g.: NSW`}</div>
-      <div>{`${
-        weatherData?.pressure_mb * 0.7501
-      } - Pressure in mm ртутного столба`}</div>
-      <div>{`${weatherData?.humidity} - Humidity as percentage`}</div>
-      <div>{`${weatherData?.uv} - UV Index`}</div>
-      <div>{`${astronomyData?.sunrise} - sunrise`}</div>
-      <div>{`${astronomyData?.sunset} - sunset`}</div>
+      <h2>ПОГОДА СЕГОДНЯ</h2>
+      <MainInfo
+        icon={weatherData?.condition.icon}
+        text={weatherData?.condition.text}
+        countryName={locationData?.country_name}
+        city={locationData?.city}
+        temp={weatherData?.temp_c}
+      />
+
+      <WindInfo
+        windKph={weatherData?.wind_kph}
+        gustKph={weatherData?.gust_kph}
+        windDir={weatherData?.wind_dir}
+      />
+
+      <AdditionalInfo
+        feelsLike={weatherData?.feelslike_c}
+        pressure={weatherData?.pressure_mb}
+        humidity={weatherData?.humidity}
+        uv={weatherData?.uv}
+      />
+      <SunInfo sunrise={astronomyData?.sunrise} sunset={astronomyData?.sunset} />
     </section>
   );
 };

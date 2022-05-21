@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { request } from "../../api";
-import { Layout, CurrentDay, ForecastWeather, Header } from "../../components";
+import { useEffect, useState } from 'react';
+import { request } from '../../api';
+import { Layout, CurrentDay, ForecastWeather, Header } from '../../components';
 // import { useRequest } from "../../hooks";
 
 export const App = () => {
@@ -26,7 +26,7 @@ export const App = () => {
   const getCurrentLocation = () => {
     request(
       {
-        url: "ip.json",
+        url: 'ip.json',
       },
       setCurrentLocation
     );
@@ -35,7 +35,7 @@ export const App = () => {
   const getWeatherData = () => {
     request(
       {
-        url: "forecast.json",
+        url: 'forecast.json',
         params: {
           days: 4,
         },
@@ -47,7 +47,7 @@ export const App = () => {
   const getAstronomyData = () => {
     request(
       {
-        url: "astronomy.json",
+        url: 'astronomy.json',
       },
       setAstronomyData
     );
@@ -68,9 +68,7 @@ export const App = () => {
         weatherData={weatherData?.current}
         hourWeatherData={weatherData?.forecast.forecastday[0].hour}
       />
-      <ForecastWeather
-        weatherData={weatherData?.forecast.forecastday.slice(1, 3)}
-      />
+      <ForecastWeather weatherData={weatherData?.forecast.forecastday.slice(1, 3)} />
     </Layout>
   );
 };

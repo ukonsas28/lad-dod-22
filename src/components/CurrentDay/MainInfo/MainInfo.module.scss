@@ -1,0 +1,40 @@
+.main_info {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #2c2c2c;
+  margin-bottom: 36px;
+  & > img {
+    width: 128px;
+    height: 128px;
+  }
+  .description {
+    font-size: 12px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #c4c4c4;
+  }
+  .location {
+    font-size: 30px;
+    font-weight: 600;
+    & > svg {
+      margin-left: 8px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .temp {
+    font-size: 64px;
+    font-weight: 600;
+    position: relative;
+    &::after {
+      content: '\00B0';
+      font-size: 30px;
+      position: absolute;
+      top: 5px;
+      right: -10px;
+    }
+  }
+}

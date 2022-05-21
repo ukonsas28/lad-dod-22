@@ -3,9 +3,23 @@
   height: 100vh;
   width: 100vw;
   grid-template-areas:
-    "header header"
-    "content aside";
-  grid-template-rows: 80px auto;
+    'header header'
+    'content aside';
+  grid-template-rows: 140px auto;
   grid-template-columns: 60% 40%;
-}
+  padding: 30px;
 
+  @media screen and (max-width: 768px) {
+    grid-template-areas:
+      'header '
+      'content'
+      'aside';
+    grid-template-rows: auto;
+    grid-template-columns: 100%;
+    padding: 10px;
+  }
+  h1 {
+    color: #2c2c2c;
+    font-size: 26px;
+  }
+}
