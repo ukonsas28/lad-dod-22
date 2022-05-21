@@ -1,3 +1,20 @@
-.aside {
-  grid-area: aside;
+.item_wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #9a9a9a;
+  .item_title {
+    font-size: 20px;
+    color: c4c4c4;
+  }
+  .item_temp {
+    &::after {
+      content: '\00B0';
+    }
+  }
+  & > img {
+    width: 100px;
+    height: 100px;
+  }
 }

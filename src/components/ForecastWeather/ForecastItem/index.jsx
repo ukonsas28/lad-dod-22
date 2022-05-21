@@ -1,14 +1,15 @@
+import style from './ForecastItem.module.scss';
+
 export const ForecastItem = ({ data: { astro, day, date } }) => {
   return (
-    <div>
-      <br />
-      <div>{date}</div>
-      <div>{`${day?.condition.text}`}</div>
+    <div className={style.item_wrapper}>
+      <span className={style.item_title}>{`Прогноз на ${date}`}</span>
       <img src={day?.condition.icon} alt="icon" />
-      <div>{`${day?.avghumidity} - Humidity as percentage`}</div>
-      <div>{`${day?.avgtemp_c} - Temperature in celsius`}</div>
-      <div>{`${astro?.sunrise} - sunrise`}</div>
-      <div>{`${astro?.sunset} - sunset`}</div>
+      <div>{`${day?.condition.text}`}</div>
+      <div className={style.item_temp}>{`${day?.avgtemp_c}`}</div>
+      <div>{`${day?.avghumidity} - Влажность`}</div>
+      <div>{`${astro?.sunrise} - Восход`}</div>
+      <div>{`${astro?.sunset} - Закат`}</div>
     </div>
   );
 };

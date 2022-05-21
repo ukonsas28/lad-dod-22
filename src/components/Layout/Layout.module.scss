@@ -8,18 +8,21 @@
   grid-template-rows: 140px auto;
   grid-template-columns: 60% 40%;
   padding: 30px;
-
+  h1 {
+    color: #2c2c2c;
+    font-size: 26px;
+  }
   @media screen and (max-width: 768px) {
     grid-template-areas:
       'header'
       'content'
       'aside';
-    grid-template-rows: auto;
+    grid-template-rows: 140px auto;
     grid-template-columns: 100%;
     padding: 10px;
-  }
-  h1 {
-    color: #2c2c2c;
-    font-size: 26px;
+    h1 {
+      color: #2c2c2c;
+      font-size: 25px;
+    }
   }
 }
