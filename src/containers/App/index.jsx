@@ -1,8 +1,24 @@
 import { useEffect, useState } from "react";
-import { Layout, CurrentDay, ForecastWeather, Header } from "../../components";
 import { request } from "../../api";
+import { Layout, CurrentDay, ForecastWeather, Header } from "../../components";
+// import { useRequest } from "../../hooks";
 
 export const App = () => {
+  // const currentLocation = useRequest({
+  //   url: "ip.json",
+  // });
+
+  // const weatherData = useRequest({
+  //   url: "forecast.json",
+  //   params: {
+  //     days: 4,
+  //   },
+  // });
+
+  // const astronomyData = useRequest({
+  //   url: "astronomy.json",
+  // });
+
   const [weatherData, setWeatherData] = useState();
   const [currentLocation, setCurrentLocation] = useState();
   const [astronomyData, setAstronomyData] = useState();

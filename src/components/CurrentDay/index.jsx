@@ -4,7 +4,6 @@ export const CurrentDay = ({
   weatherData,
   locationData,
   astronomyData,
-  hourWeatherData,
 }) => {
   return (
     <section className={style.content}>
