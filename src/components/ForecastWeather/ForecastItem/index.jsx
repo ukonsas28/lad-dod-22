@@ -7,7 +7,7 @@ export const ForecastItem = ({ data: { astro, day, date } }) => {
       <img src={day?.condition.icon} alt="icon" />
       <div>{`${day?.condition.text}`}</div>
       <div className={style.item_temp}>{`${day?.avgtemp_c}`}</div>
-      <div>{`${day?.avghumidity} - Влажность`}</div>
+      <div>{`${day?.avghumidity} - Влажность воздуха`}</div>
       <div>{`${astro?.sunrise} - Восход`}</div>
       <div>{`${astro?.sunset} - Закат`}</div>
     </div>

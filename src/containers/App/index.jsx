@@ -4,10 +4,6 @@ import { Layout, CurrentDay, ForecastWeather, Header } from '../../components';
 // import { useRequest } from "../../hooks";
 
 export const App = () => {
-  // const currentLocation = useRequest({
-  //   url: "ip.json",
-  // });
-
   // const weatherData = useRequest({
   //   url: "forecast.json",
   //   params: {
@@ -19,18 +15,11 @@ export const App = () => {
   //   url: "astronomy.json",
   // });
 
+  // const [currentLocation, setCurrentLocation] = useState();
   const [weatherData, setWeatherData] = useState();
-  const [currentLocation, setCurrentLocation] = useState();
   const [astronomyData, setAstronomyData] = useState();
 
-  const getCurrentLocation = () => {
-    request(
-      {
-        url: 'ip.json',
-      },
-      setCurrentLocation
-    );
-  };
+  const [search, setSearch] = useState('Нижний Новгород');
 
   const getWeatherData = () => {
     request(
@@ -38,6 +27,7 @@ export const App = () => {
         url: 'forecast.json',
         params: {
           days: 4,
+          q: search,
         },
       },
       setWeatherData
@@ -48,23 +38,24 @@ export const App = () => {
     request(
       {
         url: 'astronomy.json',
+        params: {
+          q: search,
+        },
       },
       setAstronomyData
     );
   };
 
-  useEffect(getWeatherData, []);
+  useEffect(getWeatherData, [search]);
 
-  useEffect(getCurrentLocation, []);
-
-  useEffect(getAstronomyData, []);
+  useEffect(getAstronomyData, [search]);
 
   return (
     <Layout>
-      <Header />
+      <Header setSearch={setSearch} />
       <CurrentDay
         astronomyData={astronomyData?.astronomy.astro}
-        locationData={currentLocation}
+        locationData={weatherData?.location}
         weatherData={weatherData?.current}
         hourWeatherData={weatherData?.forecast.forecastday[0].hour}
       />

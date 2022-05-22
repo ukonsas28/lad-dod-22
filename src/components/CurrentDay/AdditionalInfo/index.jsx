@@ -12,7 +12,7 @@ export const AdditionalInfo = ({ feelsLike, pressure, humidity, uv }) => {
         <Tooltip title="Давление" placement="topLeft">
           <span>{`${Math.trunc(pressure * 0.7501)} мм/р.ст`}</span>
         </Tooltip>
-        <Tooltip title="Влажность" placement="topLeft">
+        <Tooltip title="Влажность воздуха" placement="topLeft">
           <span>{humidity}</span>
         </Tooltip>
         <Tooltip title="Ультрафиолет" placement="topLeft">

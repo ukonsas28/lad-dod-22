@@ -12,8 +12,8 @@ export const CurrentDay = ({ weatherData, locationData, astronomyData }) => {
       <MainInfo
         icon={weatherData?.condition.icon}
         text={weatherData?.condition.text}
-        countryName={locationData?.country_name}
-        city={locationData?.city}
+        countryName={locationData?.country}
+        city={locationData?.name}
         temp={weatherData?.temp_c}
       />
 
