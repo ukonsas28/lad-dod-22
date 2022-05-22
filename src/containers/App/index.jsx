@@ -15,7 +15,6 @@ export const App = () => {
   //   url: "astronomy.json",
   // });
 
-  // const [currentLocation, setCurrentLocation] = useState();
   const [weatherData, setWeatherData] = useState();
   const [astronomyData, setAstronomyData] = useState();
 
