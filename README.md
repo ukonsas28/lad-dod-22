@@ -7,7 +7,7 @@
 ## Установка проекта для разработки
 
 ```bash
-git clone
+git clone https://github.com/ukonsas28/lad-dod-22.git
 npm i
 ```
 
