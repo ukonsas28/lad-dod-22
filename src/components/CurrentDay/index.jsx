@@ -1,5 +1,5 @@
 import { MainInfo } from './MainInfo';
-import { AdditionalInfo, SunInfo, WindInfo } from './InfoBlocks';
+import { ExtraInfo, SunInfo, WindInfo } from './InfoBlocks';
 import style from './CurrentDay.module.scss';
 
 export const CurrentDay = ({ weatherData, locationData, astronomyData }) => {
@@ -20,7 +20,7 @@ export const CurrentDay = ({ weatherData, locationData, astronomyData }) => {
         windDir={weatherData?.wind_dir}
       />
 
-      <AdditionalInfo
+      <ExtraInfo
         feelsLike={weatherData?.feelslike_c}
         pressure={weatherData?.pressure_mb}
         humidity={weatherData?.humidity}

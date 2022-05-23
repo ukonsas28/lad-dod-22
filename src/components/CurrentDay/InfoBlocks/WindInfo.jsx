@@ -1,5 +1,5 @@
 import { Tooltip } from 'antd';
-import { InfoWrapper } from '../../InfoWrapper';
+import { InfoWrapper } from './InfoWrapper';
 
 export const WindInfo = ({ windKph, gustKph, windDir }) => {
   return (

@@ -1,7 +1,7 @@
 import { Tooltip } from 'antd';
-import { InfoWrapper } from '../../InfoWrapper';
+import { InfoWrapper } from './InfoWrapper';
 
-export const AdditionalInfo = ({ feelsLike, pressure, humidity, uv }) => {
+export const ExtraInfo = ({ feelsLike, pressure, humidity, uv }) => {
   return (
     <InfoWrapper title="ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ">
       <Tooltip title="Ощущается как" placement="topLeft">
