@@ -1,24 +1,13 @@
 import { useEffect, useState } from 'react';
 import { request } from '../../api';
 import { Layout, CurrentDay, ForecastWeather, Header } from '../../components';
-// import { useRequest } from "../../hooks";
+// import { useRequest } from '../../hooks';
 
 export const App = () => {
-  // const weatherData = useRequest({
-  //   url: "forecast.json",
-  //   params: {
-  //     days: 4,
-  //   },
-  // });
-
-  // const astronomyData = useRequest({
-  //   url: "astronomy.json",
-  // });
+  const [search, setSearch] = useState('Нижний Новгород');
 
   const [weatherData, setWeatherData] = useState();
   const [astronomyData, setAstronomyData] = useState();
-
-  const [search, setSearch] = useState('Нижний Новгород');
 
   const getWeatherData = () => {
     request(
@@ -48,6 +37,27 @@ export const App = () => {
   useEffect(getWeatherData, [search]);
 
   useEffect(getAstronomyData, [search]);
+
+  // const weatherData = useRequest(
+  //   {
+  //     url: 'forecast.json',
+  //     params: {
+  //       days: 4,
+  //       q: search,
+  //     },
+  //   },
+  //   [search]
+  // );
+
+  // const astronomyData = useRequest(
+  //   {
+  //     url: 'astronomy.json',
+  //     params: {
+  //       q: search,
+  //     },
+  //   },
+  //   [search]
+  // );
 
   return (
     <Layout>

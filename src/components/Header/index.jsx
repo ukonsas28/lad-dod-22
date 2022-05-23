@@ -1,6 +1,6 @@
 import { Input } from 'antd';
-
 import style from './Header.module.scss';
+
 const { Search } = Input;
 
 export const Header = ({ setSearch }) => {
