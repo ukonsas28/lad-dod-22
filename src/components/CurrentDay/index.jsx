@@ -1,7 +1,5 @@
 import { MainInfo } from './MainInfo';
-import { AdditionalInfo } from './InfoBlocks/AdditionalInfo';
-import { SunInfo } from './InfoBlocks/SunInfo';
-import { WindInfo } from './InfoBlocks/WindInfo';
+import { AdditionalInfo, SunInfo, WindInfo } from './InfoBlocks';
 import style from './CurrentDay.module.scss';
 
 export const CurrentDay = ({ weatherData, locationData, astronomyData }) => {
