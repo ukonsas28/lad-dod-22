@@ -1,43 +1,37 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import { request } from '../../api';
 import { Layout, CurrentDay, ForecastWeather, Header } from '../../components';
+import { useRequest } from '../../hooks';
 
 export const App = () => {
-  const [weatherData, setWeatherData] = useState();
-  const [astronomyData, setAstronomyData] = useState();
+  const [location, setLocation] = useState('Нижний Новгород');
 
-  const getWeatherData = () => {
-    request(
-      {
-        url: 'forecast.json',
-        params: {
-          days: 4,
-          q: 'Нижний Новгород',
-        },
+  const weatherData = useRequest(
+    {
+      url: 'forecast.json',
+      params: {
+        days: 4,
+        q: location,
       },
-      setWeatherData
-    );
-  };
+    },
+    [location]
+  );
 
-  const getAstronomyData = () => {
-    request(
-      {
-        url: 'astronomy.json',
-        params: {
-          q: 'Нижний Новгород',
-        },
+  const astronomyData = useRequest(
+    {
+      url: 'astronomy.json',
+      params: {
+        q: location,
       },
-      setAstronomyData
-    );
-  };
+    },
+    [location]
+  );
 
-  useEffect(getWeatherData, []);
-
-  useEffect(getAstronomyData, []);
 
   return (
     <Layout>
-      <Header />
+      <Header setLocation={setLocation} />
       <CurrentDay
         astronomyData={astronomyData?.astronomy.astro}
         locationData={weatherData?.location}
